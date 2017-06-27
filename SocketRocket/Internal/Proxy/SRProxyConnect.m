@@ -75,6 +75,17 @@
     self.outputStream = nil;
 }
 
+
+- (void)setSocksProxyHost:(NSString *)host
+{
+    _socksProxyHost = host;
+}
+
+- (void)setSocksProxyPort:(uint32_t)port
+{
+    _socksProxyPort = port;
+}
+
 ///--------------------------------------
 #pragma mark - Open
 ///--------------------------------------

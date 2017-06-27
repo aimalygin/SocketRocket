@@ -239,6 +239,16 @@ NSString *const SRHTTPResponseErrorKey = @"HTTPResponseStatusCode";
     assert(dispatch_get_specific((__bridge void *)self) == (__bridge void *)_workQueue);
 }
 
+- (void)setSocksProxyHost:(NSString *)host
+{
+    [_proxyConnect setSocksProxyHost:host];
+}
+
+- (void)setSocksProxyPort:(uint32_t)port
+{
+    [_proxyConnect setSocksProxyPort:port];
+}
+
 ///--------------------------------------
 #pragma mark - Dealloc
 ///--------------------------------------

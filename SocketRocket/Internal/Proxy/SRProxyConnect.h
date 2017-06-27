@@ -21,6 +21,9 @@ typedef void(^SRProxyConnectCompletion)(NSError *_Nullable error,
 
 - (void)openNetworkStreamWithCompletion:(SRProxyConnectCompletion)completion;
 
+- (void)setSocksProxyHost:(NSString *)host;
+- (void)setSocksProxyPort:(uint32_t)port;
+
 @end
 
 NS_ASSUME_NONNULL_END

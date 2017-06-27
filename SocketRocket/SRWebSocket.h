@@ -408,6 +408,12 @@ extern NSString *const SRHTTPResponseErrorKey;
  */
 - (BOOL)webSocketShouldConvertTextFrameToString:(SRWebSocket *)webSocket NS_SWIFT_NAME(webSocketShouldConvertTextFrameToString(_:));
 
+/**
+ Proxy config
+ */
+- (void)setSocksProxyHost:(NSString *)host;
+- (void)setSocksProxyPort:(uint32_t)port;
+
 @end
 
 NS_ASSUME_NONNULL_END
