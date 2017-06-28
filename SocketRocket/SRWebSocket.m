@@ -138,6 +138,8 @@ NSString *const SRHTTPResponseErrorKey = @"HTTPResponseStatusCode";
 
     // proxy support
     SRProxyConnect *_proxyConnect;
+    NSString *_socksProxyHost;
+    uint32_t _socksProxyPort;
 }
 
 @synthesize readyState = _readyState;
@@ -241,12 +243,12 @@ NSString *const SRHTTPResponseErrorKey = @"HTTPResponseStatusCode";
 
 - (void)setSocksProxyHost:(NSString *)host
 {
-    [_proxyConnect setSocksProxyHost:host];
+    _socksProxyHost = host;
 }
 
 - (void)setSocksProxyPort:(uint32_t)port
 {
-    [_proxyConnect setSocksProxyPort:port];
+    _socksProxyPort = port;
 }
 
 ///--------------------------------------
@@ -327,6 +329,11 @@ NSString *const SRHTTPResponseErrorKey = @"HTTPResponseStatusCode";
     }
 
     _proxyConnect = [[SRProxyConnect alloc] initWithURL:_url];
+    
+    if (_socksProxyHost) {
+        [_proxyConnect setSocksProxyHost:_socksProxyHost];
+        [_proxyConnect setSocksProxyPort:_socksProxyPort];
+    }
 
     __weak typeof(self) wself = self;
     [_proxyConnect openNetworkStreamWithCompletion:^(NSError *error, NSInputStream *readStream, NSOutputStream *writeStream) {
