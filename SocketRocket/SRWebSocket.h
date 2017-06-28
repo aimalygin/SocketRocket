@@ -122,6 +122,12 @@ extern NSString *const SRHTTPResponseErrorKey;
  */
 @property (nonatomic, assign, readonly) BOOL allowsUntrustedSSLCertificates;
 
+/**
+ Proxy config
+ */
+- (void)setSocksProxyHost:(NSString *)host;
+- (void)setSocksProxyPort:(uint32_t)port;
+
 ///--------------------------------------
 #pragma mark - Constructors
 ///--------------------------------------
@@ -407,12 +413,6 @@ extern NSString *const SRHTTPResponseErrorKey;
  @return `YES` if text frame should be converted to UTF-8 String, otherwise - `NO`. Default: `YES`.
  */
 - (BOOL)webSocketShouldConvertTextFrameToString:(SRWebSocket *)webSocket NS_SWIFT_NAME(webSocketShouldConvertTextFrameToString(_:));
-
-/**
- Proxy config
- */
-- (void)setSocksProxyHost:(NSString *)host;
-- (void)setSocksProxyPort:(uint32_t)port;
 
 @end
 
