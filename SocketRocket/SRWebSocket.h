@@ -127,6 +127,8 @@ extern NSString *const SRHTTPResponseErrorKey;
  */
 - (void)setSocksProxyHost:(NSString *)host;
 - (void)setSocksProxyPort:(uint32_t)port;
+- (void)setSocksProxyUsername:(NSString *)username;
+- (void)setSocksProxyPassword:(NSString *)password;
 
 ///--------------------------------------
 #pragma mark - Constructors

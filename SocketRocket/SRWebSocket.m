@@ -140,6 +140,8 @@ NSString *const SRHTTPResponseErrorKey = @"HTTPResponseStatusCode";
     SRProxyConnect *_proxyConnect;
     NSString *_socksProxyHost;
     uint32_t _socksProxyPort;
+    NSString *_socksProxyUsername;
+    NSString *_socksProxyPassword;
 }
 
 @synthesize readyState = _readyState;
@@ -249,6 +251,16 @@ NSString *const SRHTTPResponseErrorKey = @"HTTPResponseStatusCode";
 - (void)setSocksProxyPort:(uint32_t)port
 {
     _socksProxyPort = port;
+}
+
+- (void)setSocksProxyUsername:(NSString *)username
+{
+    _socksProxyUsername = username;
+}
+
+- (void)setSocksProxyPassword:(NSString *)password
+{
+    _socksProxyPassword = password;
 }
 
 ///--------------------------------------

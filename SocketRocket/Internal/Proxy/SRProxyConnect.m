@@ -86,6 +86,16 @@
     _socksProxyPort = port;
 }
 
+- (void)setSocksProxyUsername:(NSString *)username
+{
+    _socksProxyUsername = username;
+}
+
+- (void)setSocksProxyPassword:(NSString *)password
+{
+    _socksProxyPassword = password;
+}
+
 ///--------------------------------------
 #pragma mark - Open
 ///--------------------------------------
