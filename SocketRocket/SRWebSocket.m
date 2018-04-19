@@ -345,6 +345,8 @@ NSString *const SRHTTPResponseErrorKey = @"HTTPResponseStatusCode";
     if (_socksProxyHost) {
         [_proxyConnect setSocksProxyHost:_socksProxyHost];
         [_proxyConnect setSocksProxyPort:_socksProxyPort];
+        [_proxyConnect setSocksProxyUsername:_socksProxyUsername];
+        [_proxyConnect setSocksProxyPassword:_socksProxyPassword];
     }
 
     __weak typeof(self) wself = self;

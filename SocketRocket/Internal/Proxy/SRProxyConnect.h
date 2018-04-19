@@ -23,6 +23,8 @@ typedef void(^SRProxyConnectCompletion)(NSError *_Nullable error,
 
 - (void)setSocksProxyHost:(NSString *)host;
 - (void)setSocksProxyPort:(uint32_t)port;
+- (void)setSocksProxyUsername:(NSString *)username;
+- (void)setSocksProxyPassword:(NSString *)password;
 
 @end
 
