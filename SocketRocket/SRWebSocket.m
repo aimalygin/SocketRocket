@@ -351,7 +351,11 @@ NSString *const SRHTTPResponseErrorKey = @"HTTPResponseStatusCode";
         });
     }
 
-    _proxyConnect = [[SRProxyConnect alloc] initWithURL:_url];
+    //Fix race condition
+    //TODO: Find a better implementation
+    dispatch_sync(_workQueue, ^{
+        _proxyConnect = [[SRProxyConnect alloc] initWithURL:_url];
+    });
     
     if (_socksProxyHost) {
         [_proxyConnect setSocksProxyHost:_socksProxyHost];
